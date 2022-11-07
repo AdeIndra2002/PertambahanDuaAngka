@@ -5,6 +5,8 @@
  */
 package gui;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author cncti
@@ -218,13 +220,14 @@ public class PertambahanDuaAngkaGUI extends javax.swing.JFrame {
 
     private void tambahBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tambahBTNActionPerformed
         // TODO add your handling code here:
-        if(angkapertamaTF.getText().equals("") [] angkakeduaTF.getText().equals(""));
-        int angkaPertama = Integer.valueOf(angkapertamaTF.getText());
-        int angkaKedua = Integer.valueOf(angkakeduaTF.getText());
-        
-        int hasil = angkaPertama + angkaKedua;
-        
-        hasilTF.setText(Integer.toString(hasil));
+         if (angkapertamaTF.getText().equals("") || angkakeduaTF.getText().equals("")){
+            JOptionPane.showMessageDialog(null, "Nilai Tidak boleh Kosong");
+        } else {
+            int n1 = Integer.parseInt(angkapertamaTF.getText());
+            int n2 = Integer.parseInt(angkakeduaTF.getText());
+            int hasil = n1 + n2;
+            hasilTF.setText(Integer.toString(hasil));
+        }
     }//GEN-LAST:event_tambahBTNActionPerformed
 
     /**
